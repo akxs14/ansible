@@ -12,3 +12,6 @@
 
 [load_balancer]
   load-balancer.attalon.com
+
+[log-dump]
+  log-dump.attalon.com
