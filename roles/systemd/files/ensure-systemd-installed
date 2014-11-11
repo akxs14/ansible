@@ -1,0 +1,9 @@
+#! /bin/bash
+
+if [ ! -e /etc/tried-systemd-install ];
+then
+	touch /etc/tried-systemd-install
+	echo Yes, do as I say! | apt-get install -y -q --force-yes systemd systemd-sysv
+	update-grub2
+	reboot
+fi
