@@ -1,0 +1,14 @@
+
+[bidder_ring:children]
+  master_banker
+  bidder1
+  load_balancer
+
+[master_banker]
+  master-banker1.attalon.com
+
+[bidder1]
+  bidder1.attalon.com
+
+[load_balancer]
+  load-balancer.attalon.com
