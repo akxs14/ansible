@@ -3,7 +3,7 @@
   master_banker
   bidder1
   load_balancer
-  log-dump
+  mysql1
 
 [master_banker]
   master-banker1.attalon.com

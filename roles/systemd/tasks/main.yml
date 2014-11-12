@@ -5,22 +5,5 @@
   with_items:
    - systemd
 
-- name: Systemd will refuse to boot if a single mount fails, so check that mount works
-  command: mount -a 
-  register: mount_result
-  ignore_errors: yes 
-
-- name: Show an error message 
-  fail: msg="Not all filesystems can be mounted. Installing systemd on this system will likely brick it"
-  when: "mount_result.rc  != 0"
-
-- name: Make sure SystemD is installed
-  script: ensure-systemd-installed creates=/etc/tried-systemd-install
-  # These two lines are needed to handle the command
-  async: 0
-  # potentially rebooting the box
-  poll: 0
-  ignore_errors: true
-
 - local_action: wait_for host={{ inventory_hostname }} port=22 state=started delay=1
   sudo: false
