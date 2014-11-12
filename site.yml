@@ -24,3 +24,10 @@
     - group_vars/all
   roles:
     - roles/redis
+
+- hosts: mysql1
+  user: root
+  vars_files:
+    - group_vars/all
+  roles:
+    - roles/mysql
