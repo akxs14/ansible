@@ -6,21 +6,21 @@
   vars_files:
     - group_vars/all
   roles:
-    - ../roles/backports
-    - ../roles/debian-non-free-apt
-    - ../roles/systemd
-    - ../roles/git
+    - roles/backports
+    - roles/debian-non-free-apt
+    - roles/systemd
+    - roles/git
 
 - hosts: load_balancer
   user: root
   vars_files:
     - group_vars/all
   roles:
-    - ../roles/haproxy
+    - roles/haproxy
 
 - hosts: bidder1
   user: root
   vars_files:
     - group_vars/all
   roles:
-    - ../roles/redis
+    - roles/redis
