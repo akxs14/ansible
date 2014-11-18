@@ -1,7 +1,0 @@
----
-
-- name: Install mysql
-  apt: pkg={{ item }} state=present update_cache=yes default_release=wheezy-backports
-  with_items:
-   - mysql-server
-   - mysql-client

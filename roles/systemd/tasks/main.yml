@@ -1,9 +1,0 @@
----
-
-- name: Install SystemD
-  apt: pkg={{ item }} state=present update_cache=yes
-  with_items:
-   - systemd
-
-- local_action: wait_for host={{ inventory_hostname }} port=22 state=started delay=1
-  sudo: false
